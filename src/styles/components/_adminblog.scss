@@ -1,0 +1,11 @@
+.adminblog__content-scale .column{
+  -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out !important;
+  -webkit-transition: width 1s ease-in-out, left 1.5s ease-in-out !important;
+  -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out !important;
+  -o-transition: width 1s ease-in-out, left 1.5s ease-in-out !important;
+  transition: width 1s ease-in-out, left 1.5s ease-in-out !important;
+}
+
+.adminblog__sidebar-open-button{
+  position: relative;
+}

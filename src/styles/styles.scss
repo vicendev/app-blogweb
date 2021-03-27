@@ -1,0 +1,11 @@
+@import "~bulma/bulma";
+
+@import './base/base';
+
+// Components scss
+@import './components/carousel';
+@import './components/blog';
+@import './components/adminblog';
+
+
+@import './components/loading';

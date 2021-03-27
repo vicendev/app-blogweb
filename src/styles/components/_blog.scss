@@ -1,0 +1,29 @@
+.blog__box-img-list-parent {
+  display: inline-block;
+  width: 100%;
+  height: 25vw;
+  border: 2px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.blog__img-blog-list {
+  width: 100%;
+  height:25vw;
+  object-fit: cover;
+  border-radius: 1%;
+  transition: all .5s;
+  transform: scale(1);
+
+  &:hover {
+    transition: all .5s;
+    transform: scale(1.2);
+  }
+}
+
+.blog__img-post-banner {
+  width: 100%;
+  height:25vw;
+  object-fit: cover;
+  border-radius: 1%;
+}
