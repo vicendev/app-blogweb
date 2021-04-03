@@ -1,6 +1,7 @@
 @import "~bulma/bulma";
 
 @import './base/base';
+@import './base/settings';
 
 // Components scss
 @import './components/carousel';
@@ -9,3 +10,4 @@
 
 
 @import './components/loading';
+@import './components/externalUI';

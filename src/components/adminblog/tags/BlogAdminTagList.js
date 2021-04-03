@@ -14,13 +14,12 @@ export const BlogAdminTagList = () => {
   const dispatch = useDispatch();
 
   const {loading} = useSelector(state => state.ui)
-  const {uid} = useSelector(state => state.auth)
   const {filteredTags, filteredPages, currentPage, totalPages} = useSelector(state => state.tags)
 
   // Efecto para cargar los tags
   useEffect(() => {
     dispatch(uiStartLoading())
-    dispatch(startLoadingTags(uid))
+    dispatch(startLoadingTags())
   }, [dispatch])
 
   useEffect(() => {
@@ -30,9 +29,9 @@ export const BlogAdminTagList = () => {
   },[filteredTags])
 
   // Cambia el estado de la pantalla activa
-  const handleTagScreen = (active, tag) => {
+  const handleEditScreen = (activeScreen, tag) => {
     dispatch(setActiveTag(tag.id, tag))
-    dispatch(uiBlogTagScreenActive(active))
+    dispatch(uiBlogTagScreenActive(activeScreen))
   }
 
   const handleDeleteTag = async (tag) => {
@@ -68,7 +67,7 @@ export const BlogAdminTagList = () => {
                     <td>{moment(tag.date).format('L')}</td>
                     <td><span 
                           className="button is-info"
-                          onClick={() => handleTagScreen('Edit Tag', tag)}
+                          onClick={() => handleEditScreen('Edit Tag', tag)}
                         >Editar</span></td>
                     <td><span 
                           className="button is-danger"

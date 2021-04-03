@@ -63,7 +63,7 @@ export const AdminMenu = () => {
           </p>
           <ul className="menu-list">
             <li>
-              <a onClick={() => handleActiveComponent('Blog')}>Blog</a>
+              <a onClick={() => handleActiveComponent('Posts')}>Posts</a>
             </li>
             <li>
               <a onClick={() => handleActiveComponent('Tags')}>Tags</a>

@@ -9,3 +9,69 @@
 .adminblog__sidebar-open-button{
   position: relative;
 }
+
+.adminblog__dropdown-tag{
+  &:hover{
+    background-color: lighten($color: gainsboro, $amount: 90) !important
+  }
+}
+
+.adminblog__img-post-create-banner {
+  width: 125px;
+  height:auto;
+  border: 5px inset gainsboro;
+  border-radius: 5%;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+
+@include desktop {
+  .adminblog__box-img-list-parent {
+    display: inline-block;
+    width: 100%;
+    height: 240px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .adminblog__img-blog-list {
+    width: 100%;
+    height:18vw;
+    object-fit: cover;
+    border-radius: 1%;
+    transition: all .5s;
+    transform: scale(1);
+  
+    &:hover {
+      transition: all .5s;
+      transform: scale(1.2);
+    }
+  }
+}
+
+@include mobile {
+  .adminblog__box-img-list-parent {
+    display: inline-block;
+    width: 100%;
+    height: 25vw;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .adminblog__img-blog-list {
+    width: 100%;
+    height:25vw;
+    object-fit: cover;
+    border-radius: 1%;
+    transition: all .5s;
+    transform: scale(1);
+  
+    &:hover {
+      transition: all .5s;
+      transform: scale(1.2);
+    }
+  }
+}
+

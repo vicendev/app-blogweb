@@ -5,12 +5,24 @@
   border: 2px solid #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  background-color: gainsboro;
+}
+
+.blog__background-blur {
+  filter: blur(4px);
+  width: 96.5%;
+  height: 24.55vw;
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
 }
 
 .blog__img-blog-list {
   width: 100%;
   height:25vw;
-  object-fit: cover;
+  object-fit: scale-down;
   border-radius: 1%;
   transition: all .5s;
   transform: scale(1);
@@ -24,6 +36,44 @@
 .blog__img-post-banner {
   width: 100%;
   height:25vw;
-  object-fit: cover;
+  object-fit: scale-down;
   border-radius: 1%;
+  transform: scale(1);
+}
+
+.blog__content {
+
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+  }
+  h4 {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  h5 {
+    font-size: 0.83em;
+    font-weight: bold;
+  }
+  h6 {
+    font-size: 0.67em;
+    font-weight: bold;
+  }
+  ul{
+    list-style: disc;
+    margin-top:5px;
+    margin-bottom: 10px;
+  }
+  li {
+    margin-left: 30px;
+    padding-top: 5px;
+  }
 }

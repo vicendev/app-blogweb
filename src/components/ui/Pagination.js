@@ -28,11 +28,11 @@ export const Pagination = ({reducerNewPage, reducerExactPage, filteredPages, cur
            <nav className="pagination" role="navigation" aria-label="pagination">
              {
                currentPage > 1 &&
-               <button className="button pagination-previous" onClick={()=> previousPage()}>Previous</button>
+               <button className="button pagination-previous" onClick={()=> previousPage()}>Anterior</button>
              }
              {
                currentPage < totalPages &&
-               <button className="button pagination-next" onClick={() => nextPage()}>Next page</button>
+               <button className="button pagination-next" onClick={() => nextPage()}>Siguiente</button>
              }
                <ul className="pagination-list">
                    {

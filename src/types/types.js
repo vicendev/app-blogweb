@@ -9,14 +9,22 @@ export const types = {
   uiStartLoading: '[UI] Start loading',
   uiFinishLoading: '[UI] Finish loading',
 
-  iuBlogScreenActive: '[UI] Blog screen active',
+  uiBlogScreenActive: '[UI] Blog screen active',
   uiTagScreenActive: '[UI] Tag screen active',
+  uiPostScreenActive: '[UI] Post screen active',
   
-  tagsAddNew: '[Tags] Tags add new',
+  tagsAddNew: '[Tags] New tag',
   tagsLoad: '[Tags] Load tags',
   tagsLoadNewPage: '[Tags] Load tags new page',
   tagsActive: '[Tags] Set active tag',
   tagsUpdated: '[Tags] Update tag',
   tagsDelete: '[Tags] Delete tag',
 
+  postsAddNew: '[Posts] New post',
+  postsLoad: '[Tags] Load posts',
+  postsLoadNewPage: '[Tags] Load posts new page',
+  postsActive: '[Posts] Set active post',
+  postsUpdated: '[Posts] Update post',
+  postsDelete: '[Posts] Delete post',
+  postsCleanActive: '[Posts] Clean active post'
 }

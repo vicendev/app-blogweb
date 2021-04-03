@@ -34,7 +34,7 @@ export const uiReducer = ( state = initialState, action ) => {
           loading: false
         }
 
-      case types.iuBlogScreenActive:
+      case types.uiBlogScreenActive:
         return {
           ...state,
           active: action.payload
@@ -44,6 +44,12 @@ export const uiReducer = ( state = initialState, action ) => {
         return {
           ...state,
           tagScreenActive: action.payload
+        }
+
+      case types.uiPostScreenActive:
+        return {
+          ...state,
+          postScreenActive: action.payload
         }
 
       default:

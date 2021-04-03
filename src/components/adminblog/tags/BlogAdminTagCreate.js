@@ -49,8 +49,8 @@ export const BlogAdminTagCreate = () => {
       dispatch(setError(`Error: El largo mínimo de un tag es 3, largo del tag actual ${tag.length}`));
       return false;
     }
-    else if (tag.trim().length > 15) {
-      dispatch(setError(`Error: El largo máximo de un tag es 15, largo del tag actual ${tag.length}`));
+    else if (tag.trim().length > 20) {
+      dispatch(setError(`Error: El largo máximo de un tag es 20, largo del tag actual ${tag.length}`));
       return false;
     }
 

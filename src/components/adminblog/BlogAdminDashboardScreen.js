@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 import { AdminMenu } from '../ui/AdminMenu';
-import { BlogAdminBlogScreen } from './blog/BlogAdminBlogScreen';
+import { BlogAdminPostScreen } from './blog/BlogAdminPostScreen';
 import { BlogAdminInitScreen } from './BlogAdminInitScreen';
 import { BlogAdminTagScreen } from './tags/BlogAdminTagScreen';
 
@@ -47,8 +47,8 @@ export const BlogAdminDashboardScreen = () => {
                 <BlogAdminInitScreen />
               }
               {
-                active == 'Blog' &&
-                <BlogAdminBlogScreen />
+                active == 'Posts' &&
+                <BlogAdminPostScreen />
               }
               {
                 active == 'Tags' && 

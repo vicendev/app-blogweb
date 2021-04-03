@@ -7,14 +7,12 @@ import { types } from "../types/types";
 export const startNewTag = (tag) => {
   return async(dispatch, getState) => {
 
-    const uid = getState().auth.uid;
-
     const newTag = {
       tag,
       date: new Date().getTime()
     }
 
-    const doc = await db.collection(`${uid}/blog/tags`).add(newTag)
+    const doc = await db.collection('tags').add(newTag)
 
     dispatch(addNewTag(doc.id, newTag))
 
@@ -29,9 +27,9 @@ export const addNewTag = (id, tag) => ({
   }
 })
 
-export const startLoadingTags = (uid) => {
+export const startLoadingTags = () => {
   return async (dispatch) => {
-    const tags = await loadTags(uid);
+    const tags = await loadTags();
     const totalCount = tags.length;
     const countPerPage = 5; //Total de items por pagina
     const totalPages = Math.ceil(totalCount / countPerPage);
@@ -121,12 +119,10 @@ export const setTagsPage = (loadNewPageState) => ({
 export const startUpdateTag = (tag) => {
   return async (dispatch, getState) => {
 
-    const {uid} = getState().auth;
-
     const noteToFirestore = {...tag}
     delete noteToFirestore.id;
 
-    await db.doc(`${uid}/blog/tags/${tag.id}`).update(noteToFirestore)
+    await db.doc(`tags/${tag.id}`).update(noteToFirestore)
 
     dispatch(refreshTag(tag.id, tag))
     Swal.fire('Actualizado!', tag.tag, 'success')
@@ -147,8 +143,7 @@ export const refreshTag = (id, tag) => ({
 export const startDeletingTag = (id) => {
   return async(dispatch, getState) => {
 
-    const {uid} = getState().auth;
-    await db.doc(`${uid}/blog/tags/${id}`).delete();
+    await db.doc(`tags/${id}`).delete();
 
     dispatch(deleteTag(id))
   }

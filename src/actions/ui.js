@@ -18,11 +18,16 @@ export const uiFinishLoading = () => ({
 })
 
 export const uiBlogScreenActive = (active) => ({
-  type: types.iuBlogScreenActive,
+  type: types.uiBlogScreenActive,
   payload: active
 })
 
 export const uiBlogTagScreenActive = (tagScreenActive) => ({
   type: types.uiTagScreenActive,
   payload: tagScreenActive
+})
+
+export const uiBlogPostScreenActive = (postScreenActive) => ({
+  type: types.uiPostScreenActive,
+  payload: postScreenActive
 })

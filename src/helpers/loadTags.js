@@ -1,9 +1,9 @@
 import { db } from "../firebase/firebase-config"
 
 
-export const loadTags = async (uid) => {
+export const loadTags = async () => {
 
-  const tagsSnap = await db.collection(`${uid}/blog/tags`).get();
+  const tagsSnap = await db.collection('tags').get();
   const tags = []
 
   tagsSnap.forEach( snapChild => {

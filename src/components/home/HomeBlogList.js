@@ -1,60 +1,80 @@
-import React, { useEffect, useState } from 'react'
-import { blogList } from '../../data-test/blogList';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { startLoadingPosts } from '../../actions/post';
+import { uiFinishLoading, uiStartLoading } from '../../actions/ui';
+import { Loading } from '../ui/Loading';
 import { HomeBlogItem } from './HomeBlogItem'
 
 export const HomeBlogList = () => {
 
-  const [loading, setLoading] = useState(true)
-  const theBlogList = blogList.reverse().slice(0,4);
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
+  const {loading} = useSelector(state => state.ui)
+  const {posts} = useSelector(state => state.posts)
 
-  //   // setTimeout(() => {
-  //   //   setLoading(false)
-  //   // }, 1000)
+  // Efecto para cargar los posts
+  useEffect(() => {
+    dispatch(uiStartLoading())
+    dispatch(startLoadingPosts())
+  }, [dispatch])
 
-  // }, [])
+  useEffect(() => {
+    if (posts.length > 0){
+      dispatch(uiFinishLoading())
+    } else {
+      dispatch(uiFinishLoading())
+    }
+  },[])
 
   return (
     <>
-      <div className="columns">
-        {
-        theBlogList.slice(0,2).map( (post) => (
-          <div 
-            className="column is-6"
-            key={post.id}
-          >
-            <HomeBlogItem
+    {
+      (loading)
+      ? (<Loading />)
+      :
+      (<>
+        <div className="columns">
+          {
+          posts.slice(0,2).map( (post) => (
+            <div 
+              className="column is-6"
               key={post.id}
-              id={post.id}
-              title={post.title}
-              content={post.content}
-              autor={post.autor}
-              date={post.date}
-            />
-          </div>
-        )) 
-        }
-      </div>
-      <div className="columns">
-        {
-        theBlogList.slice(2,4).map( (post) => (
-          <div 
-            className="column is-6"
-            key={post.id}
-          >
-            <HomeBlogItem
+            >
+              <HomeBlogItem
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                url={post.url}
+                resumen={post.resumen}
+                autor={post.autor}
+                createDate={post.createDate}
+              />
+            </div>
+          )) 
+          }
+        </div>
+        <div className="columns">
+          {
+          posts.slice(2,4).map( (post) => (
+            <div 
+              className="column is-6"
               key={post.id}
-              id={post.id}
-              title={post.title}
-              content={post.content}
-              autor={post.autor}
-              date={post.date}
-            />
-          </div>
-        )) 
-        }
-      </div>
+            >
+              <HomeBlogItem
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                url={post.url}
+                resumen={post.resumen}
+                autor={post.autor}
+                createDate={post.createDate}
+              />
+            </div>
+          )) 
+          }
+        </div>
+      </>)
+    }
     </>
   )
 }
