@@ -1,9 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, NavLink} from 'react-router-dom'
+import { startLogout } from '../../actions/auth';
 
 export const Navbar = () => {
 
+  const dispatch = useDispatch();
   const { uid } = useSelector(state => state.auth)
 
   const toggleBurger = () => {
@@ -11,7 +13,7 @@ export const Navbar = () => {
   }
 
   const handleLogout = () => {
-    console.log('logout')
+    dispatch(startLogout())
   }
 
   return (
