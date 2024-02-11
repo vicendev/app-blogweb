@@ -21,10 +21,8 @@ export const HomeBlogList = () => {
   useEffect(() => {
     if (posts.length > 0){
       dispatch(uiFinishLoading())
-    } else {
-      dispatch(uiFinishLoading())
     }
-  },[])
+  },[posts])
 
   return (
     <>

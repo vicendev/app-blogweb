@@ -2,13 +2,12 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <footer className="footer has-background-primary-dark">
+    <footer style={{ backgroundColor: '#005792' }} className="footer">
       <div className="content has-text-centered has-text-white">
-        <p>
-          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-        </p>
+        <span>
+          <a style={{ fontSize: 20, color: "red" }} href="https://github.com/vicendev" target='__blank'>Github</a>
+          &nbsp;|&nbsp;vicendev
+        </span>
       </div>
     </footer>
   )

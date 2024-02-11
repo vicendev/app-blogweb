@@ -11,6 +11,7 @@ export const RichTextEditor = ({initialContent, content, handleContentChange}) =
   return (
   <>
   <Editor
+      apiKey='58s6qpcayczywsocbggpug3t8sgnxzd50oglq4tl2fuuur6v'
       textareaName='content'
       value={content}
       initialValue={initialContent}

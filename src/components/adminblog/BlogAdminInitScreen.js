@@ -1,11 +1,13 @@
 import React from 'react'
-import adminInitGif from '../../assets/admin-dashboard-init.gif';
+import { WelcomeSVG } from '../../assets/svg/WelcomeSVG';
 
 
 export const BlogAdminInitScreen = () => {
   return (
-    <figure className="image is-4by4 mt-1">
-      <img alt="admin-init" className="is-rounded" src={adminInitGif}/>
-    </figure>
+    <div className="container">
+      <div className="columns is-centered">
+      <WelcomeSVG />
+      </div>
+    </div>
   )
 }

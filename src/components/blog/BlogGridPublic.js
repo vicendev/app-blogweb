@@ -22,8 +22,6 @@ export const BlogGridPublic = () => {
   useEffect(() => {
     if (filteredPosts.length > 0){
       dispatch(uiFinishLoading())
-    } else {
-      dispatch(uiFinishLoading())
     }
   },[filteredPosts])
 

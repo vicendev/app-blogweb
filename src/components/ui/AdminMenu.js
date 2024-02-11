@@ -36,10 +36,10 @@ export const AdminMenu = () => {
 
   const handleActiveComponent = (active) => {
     dispatch(uiBlogScreenActive(active))
+    handleSideMenu()
   } 
 
   return (
-    
     (!menuOpen)
     ? 
       (
@@ -67,9 +67,6 @@ export const AdminMenu = () => {
             </li>
             <li>
               <a onClick={() => handleActiveComponent('Tags')}>Tags</a>
-            </li>
-            <li>
-              <a>Trabajos</a>
             </li>
           </ul>
         </aside>

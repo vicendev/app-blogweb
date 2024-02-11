@@ -45,19 +45,15 @@ export const Navbar = () => {
           Blog
         </NavLink>
 
-        <a className="navbar-item">
-          Mis trabajos
-        </a>
-
         <div className="navbar-item has-dropdown is-hoverable">
           <a className="navbar-link">
             Más
           </a>
 
           <div className="navbar-dropdown animate__animated animate__flipInX animate__faster">
-            <a className="navbar-item">
-              Acerca de
-            </a>
+            <NavLink className="navbar-item" to="/admin">
+              Admin Dashboard
+            </NavLink>
             <a className="navbar-item">
               Contacto
             </a>

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/es';
 
-export const HomeBlogItem = ({id, title, url, resumen, autor, createDate}) => {
+export const HomeBlogItem = ({ id, title, url, resumen, autor, createDate }) => {
   console.log(title)
   return (
     <div className="card">
       <div className="card-image pointer">
-      <Link 
+        <Link
           className="blog__box-img-list-parent pointer"
           to={`./blog/post/${id}`}
         >
@@ -17,7 +17,7 @@ export const HomeBlogItem = ({id, title, url, resumen, autor, createDate}) => {
       </div>
       <div className="card-content">
         <div className="content">
-        <Link 
+          <Link
             className="title has-text-link is-size-4 mt-2 pointer"
             to={`./blog/post/${id}`}
           >{title}</Link>
