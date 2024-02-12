@@ -20,7 +20,7 @@ export const BlogAdminPostList = () => {
   // Efecto para cargar los posts
   useEffect(() => {
     dispatch(uiStartLoading())
-    dispatch(startLoadingPosts())
+    dispatch(startLoadingPosts(true))
   }, [dispatch])
 
   useEffect(() => {

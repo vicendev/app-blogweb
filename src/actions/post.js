@@ -114,9 +114,11 @@ export const startDeletingPost = (id) => {
   }
 }
 
-export const startLoadingPosts = () => {
+export const startLoadingPosts = (isAdmin = false) => {
   return async (dispatch) => {
-    const posts = await loadPosts();
+    let posts = await loadPosts();
+    if (!isAdmin) posts = posts.filter((post) => post.display)
+    
     const totalCount = posts.length;
     const countPerPage = 5; //Total de items por pagina
     const totalPages = Math.ceil(totalCount / countPerPage);
